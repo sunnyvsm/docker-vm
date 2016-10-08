@@ -8,8 +8,7 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 1313, host: 1313
 
   # shared folders for blog
-  config.vm.synced_folder "../Blog/blog-source/", "/home/ubuntu/blog-source/"
-  config.vm.synced_folder "../Blog/blog-release/", "/home/ubuntu/blog-release/"
+  config.vm.synced_folder "../Blog/blog-source", "/home/ubuntu/blog-source/"
 
   config.vm.provision "shell", inline: <<-SHELL
       # setup docker
